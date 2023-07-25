@@ -1,0 +1,119 @@
+{
+	"info": {
+		"_postman_id": "9c9efb18-d584-4d40-a0d6-f128bf0d6f2e",
+		"name": "Mars-Rovers",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create New Rover",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"order_items\": [\r\n    {\r\n      \"id\": 1,\r\n      \"quantity\": 3\r\n    },\r\n    {\r\n      \"id\": 2,\r\n      \"quantity\": 3\r\n    }\r\n  ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/v1/mars-rover/create?coordinates=4,4,N",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"mars-rover",
+						"create"
+					],
+					"query": [
+						{
+							"key": "coordinates",
+							"value": "4,4,N"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Rover",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/v1/mars-rover/position?rover=R1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"mars-rover",
+						"position"
+					],
+					"query": [
+						{
+							"key": "rover",
+							"value": "R1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Move Rover",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"order_items\": [\r\n    {\r\n      \"id\": 1,\r\n      \"quantity\": 3\r\n    },\r\n    {\r\n      \"id\": 2,\r\n      \"quantity\": 3\r\n    }\r\n  ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/v1/mars-rover/move?rover=aws&commands=r,f,f",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"mars-rover",
+						"move"
+					],
+					"query": [
+						{
+							"key": "rover",
+							"value": "aws"
+						},
+						{
+							"key": "commands",
+							"value": "r,f,f"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
